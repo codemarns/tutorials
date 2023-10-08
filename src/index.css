@@ -25,7 +25,7 @@ html {
 
 @media (prefers-color-scheme: light) {
   :root {
-    @apply text-default-700 bg-gradient-to-br from-success-50 to-secondary-50;
+    @apply text-default-700 bg-gradient-to-br from-success-100 to-secondary-100;
   }
 }
 
