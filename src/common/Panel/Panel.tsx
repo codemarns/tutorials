@@ -1,25 +1,21 @@
 import React from "react";
 import cn from "classnames";
+import { Card } from "../../components";
 import { CommonProps } from "../../types";
-import { sidebarStyles as styles } from "../styles";
 
 type PanelProps = React.HTMLAttributes<HTMLDivElement> & CommonProps;
 
 const Panel: React.FC<PanelProps> = (props) => {
-  const { codemarns, ...restProps } = props;
+  const { codename } = props;
   return (
-    <aside
-      {...restProps}
-      className={cn({ [codemarns + "__panel"]: codemarns }, styles.base)}
+    <Card
+      className={cn({ [codename + "__panel"]: codename }, "min-h-full")}
+      title={"Component Panel"}
+      id={"panel"}
+      actions={[]}
     >
-      <div className={styles.header.base}>
-        <span className={styles.header.title}>{`Panel`}</span>
-      </div>
-
-      <div className={cn("content-with-scroll", styles.content.base)}>
-        <div className="flex-1 h-[1200px]">Coming Soon...</div>
-      </div>
-    </aside>
+      <div className="flex-1 h-[1200px]">Coming Soon...</div>
+    </Card>
   );
 };
 
