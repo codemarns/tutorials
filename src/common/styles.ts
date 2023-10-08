@@ -1,7 +1,7 @@
 export const containerStyles = {
-  base: "min-h-full bg-white border border-default-100/70 rounded-lg",
+  base: "min-h-full bg-white border border-default-100/60 rounded-lg",
   header: {
-    base: "flex-1 h-14 px-4 flex items-center gap-1 border-b border-default-100/70",
+    base: "flex-1 h-14 px-4 flex items-center gap-1 border-b border-default-100/60",
     title: "text-xl font-bold",
   },
   content: {
