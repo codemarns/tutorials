@@ -11,13 +11,6 @@ export const headerStyles = {
   },
   actions: {
     base: "flex items-center gap-3",
-    item: {
-      base: "relative w-10 h-10 p-1 border hover:scale-110 rounded-full transition-all",
-      color: {
-        success: "bg-success-50 border-success-200 hover:border-success-300",
-        primary: "bg-primary-50 border-primary-200 hover:border-primary-300",
-        secondary: "bg-secondary-50 border-secondary-200 hover:border-secondary-300 ",
-      },
-    },
+    item: "relative w-10 h-10 p-1 hover:scale-110 rounded-full transition-all backdrop-blur-md bg-white/50",
   },
 };

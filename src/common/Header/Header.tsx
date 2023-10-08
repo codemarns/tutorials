@@ -23,24 +23,9 @@ const Header: React.FC<HeaderProps> = (props) => {
       </div>
 
       <div className={styles.actions.base}>
-        <div
-          className={cn(
-            styles.actions.item.base,
-            styles.actions.item.color.success
-          )}
-        />
-        <div
-          className={cn(
-            styles.actions.item.base,
-            styles.actions.item.color.primary
-          )}
-        />
-        <div
-          className={cn(
-            styles.actions.item.base,
-            styles.actions.item.color.secondary
-          )}
-        >
+        <div className={styles.actions.item} />
+        <div className={styles.actions.item} />
+        <div className={styles.actions.item}>
           <img
             src={codemarnsLogo}
             alt="codemarns profile"
