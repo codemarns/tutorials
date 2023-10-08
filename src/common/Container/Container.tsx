@@ -1,28 +1,21 @@
 import React from "react";
 import cn from "classnames";
 import { CommonProps } from "../../types";
-import { containerStyles as styles } from "../styles";
 
 type ContainerProps = React.HTMLAttributes<HTMLDivElement> & CommonProps;
 
 const Container: React.FC<ContainerProps> = (props) => {
-  const { codemarns, className, children, ...restProps } = props;
+  const { codename, children } = props;
 
   return (
     <div
-      {...restProps}
       className={cn(
-        { [codemarns + "__container"]: codemarns },
-        styles.base,
-        className
+        { [codename + "__container"]: codename },
+        "w-full h-full overflow-hidden grid gap-3"
       )}
+      style={{ gridTemplateColumns: "1fr 300px" }}
     >
-      <div className={styles.header.base}>
-        <h1 className={styles.header.title}>{`Component Title`}</h1>
-      </div>
-      <div className={cn("content-with-scroll", styles.content.base)}>
-        {children}
-      </div>
+      {children}
     </div>
   );
 };
