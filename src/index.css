@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply box-border p-0 m-0 transition-all;
+  @apply box-border p-0 m-0;
 }
 
 html {
@@ -14,8 +14,7 @@ html {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color-scheme: light dark;
-  color: #ffffff;
-  background-color: #0b0c0f;
+  @apply text-white bg-default-950;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,28 +25,38 @@ html {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #323945;
-    background-color: #ffffff;
+    @apply text-default-700 bg-primary-50;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 1rem;
+  @apply w-4;
 }
 ::-webkit-scrollbar-track {
-  background-color: #0b0c0f;
+  @apply bg-transparent;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 0.5rem;
-  background: #323945;
-  background: -webkit-linear-gradient(to right, #323945, #252a33);
-  background: linear-gradient(to right, #323945, #252a33);
-  background-clip: content-box;
-  border: 4px solid transparent;
+  @apply rounded-lg bg-default-100 bg-clip-content border-4 border-solid border-transparent;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #3f4857;
-  background: -webkit-linear-gradient(to right, #3f4857, #323945);
-  background: linear-gradient(to right, #3f4857, #323945);
-  background-clip: content-box;
+  @apply bg-default-200;
+}
+
+/* CUSTOM */
+
+/* Content Scroll Bar */
+.content-with-scroll {
+  overflow-y: scroll;
+  mask-image: linear-gradient(to top, transparent, black),
+    linear-gradient(to left, transparent 17px, black 17px);
+  mask-size: 100% 20000px;
+  mask-position: left bottom;
+  -webkit-mask-image: linear-gradient(to top, transparent, black),
+    linear-gradient(to left, transparent 17px, black 17px);
+  -webkit-mask-size: 100% 20000px;
+  -webkit-mask-position: left bottom;
+  transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+}
+.content-with-scroll:hover {
+  -webkit-mask-position: left top;
 }
