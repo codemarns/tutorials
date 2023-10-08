@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import cn from "classnames";
-import { CommonProps } from "../../types";
-import { headerStyles as styles } from "./styles";
 import codemarnsLogo from "/codemarns-logo.svg";
+import { headerStyles as styles } from "./styles";
+import { Context } from "../../App";
 
-type HeaderProps = React.HTMLAttributes<HTMLDivElement> & CommonProps;
+type HeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const { codename } = props;
+  const { codename } = useContext(Context);
   return (
-    <header className={cn({ [codename + "__header"]: codename }, styles.base)}>
+    <header
+      {...props}
+      className={cn({ [codename + "__header"]: codename }, styles.base)}
+    >
       <div className={styles.logo.base}>
         <img
           alt="codemarns logo"

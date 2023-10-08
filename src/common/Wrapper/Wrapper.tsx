@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import cn from "classnames";
-import { CommonProps } from "../../types";
+import { Context } from "../../App";
 
-type WrapperProps = React.HTMLAttributes<HTMLDivElement> & CommonProps;
+type WrapperProps = React.HTMLAttributes<HTMLDivElement>;
 
 const Wrapper: React.FC<WrapperProps> = (props) => {
-  const { codename, children } = props;
+  const { children, ...restProps } = props;
+  const { codename } = useContext(Context);
 
   return (
     <div
+      {...restProps}
       className={cn(
         { [codename + "__wrapper"]: codename },
         "grid gap-3 overflow-hidden"

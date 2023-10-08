@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import cn from "classnames";
 import { Card } from "../../components";
-import { CommonProps } from "../../types";
+import { Context } from "../../App";
 
-type PanelProps = React.HTMLAttributes<HTMLDivElement> & CommonProps;
+type PanelProps = React.HTMLAttributes<HTMLDivElement>;
 
-const Panel: React.FC<PanelProps> = (props) => {
-  const { codename } = props;
+const Panel: React.FC<PanelProps> = () => {
+  const { codename } = useContext(Context);
   return (
     <Card
       className={cn({ [codename + "__panel"]: codename }, "min-h-full")}

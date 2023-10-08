@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import cn from "classnames";
+import { Context } from "../../App";
 import { Card } from "../../components";
-import { CommonProps } from "../../types";
 
-type SidebarProps = React.HTMLAttributes<HTMLDivElement> & CommonProps;
+type SidebarProps = React.HTMLAttributes<HTMLDivElement>;
 
-const Sidebar: React.FC<SidebarProps> = (props) => {
-  const { codename } = props;
+const Sidebar: React.FC<SidebarProps> = () => {
+  const { codename } = useContext(Context);
   return (
     <Card
       className={cn({ [codename + "__sidebar"]: codename }, "min-h-full")}

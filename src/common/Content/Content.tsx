@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import cn from "classnames";
+import { Context } from "../../App";
 import { Card } from "../../components";
-import { CommonProps } from "../../types";
 
-type ContentProps = React.HTMLAttributes<HTMLDivElement> & CommonProps;
+type ContentProps = React.HTMLAttributes<HTMLDivElement>;
 
 const Content: React.FC<ContentProps> = (props) => {
-  const { codename, children } = props;
+  const { children } = props;
+  const { codename } = useContext(Context);
 
   return (
     <Card
