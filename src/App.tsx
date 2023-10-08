@@ -1,10 +1,11 @@
 import cn from "classnames";
 import { useEffect, useState } from "react";
-import { Container, Panel, Sidebar } from "./common";
+import { Container, Content, Header, Panel, Sidebar, Wrapper } from "./common";
+import { mainStyles as styles } from "./styles";
 import SampleData from "./SampleData";
 
 function App() {
-  const codemarns = "codemarns";
+  const codename = "codemarns";
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
 
   function getCurrentDimension() {
@@ -25,28 +26,22 @@ function App() {
     };
   }, [screenSize]);
 
-  const styles = {
-    main: "w-screen h-screen max-w-[1920px] mx-auto p-3 overflow-hidden grid gap-3",
-  };
-
   return (
     <main
       id="main"
-      className={cn(codemarns, styles.main)}
-      style={{ gridTemplateColumns: "300px 1fr" }}
+      className={cn(codename, styles.main)}
+      style={{ gridTemplateRows: "3.5rem 1fr" }}
     >
-      <Sidebar codemarns={codemarns} />
-      <div
-        className="w-full h-full overflow-hidden grid gap-3"
-        style={{ gridTemplateColumns: "1fr 300px" }}
-      >
-        <Container codemarns={codemarns}>
-          <div className="flex-1 h-auto">
+      <Header codename={codename} />
+      <Wrapper codename={codename}>
+        <Sidebar codename={codename} />
+        <Container codename={codename}>
+          <Content codename={codename}>
             <SampleData />
-          </div>
+          </Content>
+          <Panel codename={codename} />
         </Container>
-        <Panel codemarns={codemarns} />
-      </div>
+      </Wrapper>
     </main>
   );
 }

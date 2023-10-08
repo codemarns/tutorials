@@ -1,7 +1,7 @@
 import React from "react";
 
 export type CommonProps = {
-  codemarns?: string;
+  codename?: string;
 };
 
 export type MainProps = React.HTMLAttributes<HTMLDivElement> & CommonProps;
