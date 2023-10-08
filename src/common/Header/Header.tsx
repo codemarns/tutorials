@@ -2,6 +2,7 @@ import React from "react";
 import cn from "classnames";
 import { CommonProps } from "../../types";
 import { headerStyles as styles } from "./styles";
+import codemarnsLogo from "/codemarns-logo.svg";
 
 type HeaderProps = React.HTMLAttributes<HTMLDivElement> & CommonProps;
 
@@ -12,7 +13,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className={styles.logo.base}>
         <img
           alt="codemarns logo"
-          src="/codemarns-logo.svg"
+          src={codemarnsLogo}
           className={styles.logo.img}
         />
         <h1 className={styles.logo.name.base}>
@@ -41,7 +42,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           )}
         >
           <img
-            src="/codemarns-logo.svg"
+            src={codemarnsLogo}
             alt="codemarns profile"
             className="w-full h-full"
           />
