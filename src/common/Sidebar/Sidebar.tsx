@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import cn from "classnames";
 import { Context } from "../../App";
 import { Card } from "../../components";
+import { Nav } from "./components";
 
 type SidebarProps = React.HTMLAttributes<HTMLDivElement>;
 
@@ -14,7 +15,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
       id={"sidebar"}
       actions={[]}
     >
-      <div className="flex-1 h-[1200px]">Menu</div>
+      <Nav />
     </Card>
   );
 };
