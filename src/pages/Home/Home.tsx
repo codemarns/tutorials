@@ -1,9 +1,9 @@
 // import React from "react";
-import { Content } from "../../common";
+import { Container } from "../../common";
 
 const Home = () => {
   return (
-    <Content>
+    <Container>
       <section id="home">
         <p>
           Welcome to [Your Application Name], your ultimate destination for
@@ -83,7 +83,7 @@ const Home = () => {
           potential of your web development skills!
         </p>
       </section>
-    </Content>
+    </Container>
   );
 };
 

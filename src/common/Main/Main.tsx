@@ -15,7 +15,7 @@ const Main: React.FC<MainProps> = (props) => {
     <main
       id="main"
       className={baseClasses}
-      style={{ gridTemplateRows: "3.5rem 1fr" }}
+      style={{ gridTemplateRows: "4rem 1fr" }}
     >
       {children}
     </main>

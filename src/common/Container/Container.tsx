@@ -1,23 +1,23 @@
 import React, { useContext } from "react";
 import cn from "classnames";
 import { Context } from "../../App";
+import { Card } from "../../components";
 
 type ContainerProps = React.HTMLAttributes<HTMLDivElement>;
 
 const Container: React.FC<ContainerProps> = (props) => {
-  const { children } = props;
+  const { title, children } = props;
   const { codename } = useContext(Context);
 
   return (
-    <div
-      className={cn(
-        { [codename + "__container"]: codename },
-        "w-full h-full overflow-hidden grid gap-3"
-      )}
-      style={{ gridTemplateColumns: "1fr 300px" }}
+    <Card
+      className={cn({ [codename + "__container"]: codename }, "min-h-full")}
+      title={title}
+      id={"container"}
+      actions={[]}
     >
       {children}
-    </div>
+    </Card>
   );
 };
 

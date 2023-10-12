@@ -14,7 +14,7 @@ html {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color-scheme: light dark;
-  @apply text-white bg-gradient-to-br from-default-900 to-default-950;
+  @apply text-default-300 bg-gradient-to-br from-success-950 to-secondary-950;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,9 +23,23 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: light) {
+main {
+  @apply backdrop-blur-md bg-default-950/70;
+}
+
+.layout-borders {
+  @apply border-default-800/50;
+}
+
+@media (prefers-color-scheme: dark) {
   :root {
-    @apply text-default-700 bg-gradient-to-br from-success-100 to-secondary-100;
+    @apply text-default-700 bg-gradient-to-br from-success-50 to-secondary-50;
+  }
+  main {
+    @apply backdrop-blur-md bg-white/50;
+  }
+  .layout-borders {
+    @apply border-default-100/50;
   }
 }
 

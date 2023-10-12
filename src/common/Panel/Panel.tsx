@@ -9,8 +9,11 @@ const Panel: React.FC<PanelProps> = () => {
   const { codename } = useContext(Context);
   return (
     <Card
-      className={cn({ [codename + "__panel"]: codename }, "min-h-full")}
-      title={"Component Panel"}
+      className={cn(
+        { [codename + "__panel"]: codename },
+        "min-h-full border-l layout-borders !rounded-none"
+      )}
+      title={"Panel"}
       id={"panel"}
       actions={[]}
     >

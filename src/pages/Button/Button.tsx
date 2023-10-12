@@ -1,6 +1,6 @@
 import React from "react";
 import type { TButtonProps } from "./types";
-import { Content, Panel } from "../../common";
+import { Container, Panel } from "../../common";
 import SampleData from "../../SampleData";
 
 const Button: React.FC<TButtonProps> = (props) => {
@@ -8,9 +8,9 @@ const Button: React.FC<TButtonProps> = (props) => {
 
   return (
     <>
-      <Content>
+      <Container title="Button">
         <SampleData />
-      </Content>
+      </Container>
       <Panel />
     </>
   );

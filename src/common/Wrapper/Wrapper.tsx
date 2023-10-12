@@ -13,9 +13,9 @@ const Wrapper: React.FC<WrapperProps> = (props) => {
       {...restProps}
       className={cn(
         { [codename + "__wrapper"]: codename },
-        "grid gap-3 overflow-hidden"
+        "grid overflow-hidden"
       )}
-      style={{ gridTemplateColumns: "300px 1fr" }}
+      style={{ gridTemplateColumns: "300px 1fr 300px" }}
     >
       {children}
     </div>

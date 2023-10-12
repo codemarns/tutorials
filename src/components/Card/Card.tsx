@@ -15,7 +15,14 @@ type CardProps = React.HTMLAttributes<HTMLDivElement> & {
 };
 
 const Card: React.FC<CardProps> = (props) => {
-  const { className, id = 'cm-card', title, actions = [], children, ...restProps } = props;
+  const {
+    className,
+    id = "cm-card",
+    title,
+    actions = [],
+    children,
+    ...restProps
+  } = props;
 
   const COMPONENT_NAME = "cm-card";
 
@@ -50,6 +57,7 @@ const Card: React.FC<CardProps> = (props) => {
           className={cn(
             { [COMPONENT_NAME + "__content"]: COMPONENT_NAME },
             "content-with-scroll",
+            title || actions?.length > 0 ? "h-[calc(100%-3rem)]" : "h-full",
             styles.content.base
           )}
         >

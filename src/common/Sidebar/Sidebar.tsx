@@ -10,8 +10,10 @@ const Sidebar: React.FC<SidebarProps> = () => {
   const { codename } = useContext(Context);
   return (
     <Card
-      className={cn({ [codename + "__sidebar"]: codename }, "min-h-full")}
-      title={"Component List"}
+      className={cn(
+        { [codename + "__sidebar"]: codename },
+        "min-h-full border-r layout-borders !rounded-none"
+      )}
       id={"sidebar"}
       actions={[]}
     >
