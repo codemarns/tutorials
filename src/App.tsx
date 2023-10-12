@@ -1,15 +1,8 @@
 import React from "react";
-import {
-  Container,
-  Content,
-  Header,
-  Main,
-  Panel,
-  Sidebar,
-  Wrapper,
-} from "./common";
-import SampleData from "./SampleData";
+import { Routes, Route } from "react-router-dom";
+import { Container, Header, Main, Sidebar, Wrapper } from "./common";
 import { CommonProps } from "./types";
+import { Button, Home, NotFound } from "./pages";
 
 export const Context = React.createContext<CommonProps>({});
 
@@ -23,10 +16,11 @@ function App() {
         <Wrapper>
           <Sidebar />
           <Container>
-            <Content>
-              <SampleData />
-            </Content>
-            <Panel />
+            <Routes>
+              <Route path="/tutorials/" element={<Home />} />
+              <Route path="/tutorials/button" element={<Button />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </Container>
         </Wrapper>
       </Main>
