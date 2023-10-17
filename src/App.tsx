@@ -17,7 +17,7 @@ function App() {
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
   );
 
-  function onWindowMatch() {
+  function onThemeMatch() {
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) && themeQuery.matches)
@@ -28,7 +28,7 @@ function App() {
     }
   }
 
-  onWindowMatch();
+  onThemeMatch();
 
   useEffect(() => {
     switch (theme) {
@@ -42,7 +42,7 @@ function App() {
         break;
       default:
         localStorage.removeItem("theme");
-        onWindowMatch();
+        onThemeMatch();
         break;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
