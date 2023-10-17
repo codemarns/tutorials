@@ -26,10 +26,21 @@ html {
   @apply bg-transparent;
 }
 ::-webkit-scrollbar-thumb {
-  @apply rounded-lg bg-default-100 bg-clip-content border-4 border-solid border-transparent;
+  @apply rounded-lg bg-clip-content border-4 border-solid border-transparent;
 }
-::-webkit-scrollbar-thumb:hover {
+/* light */
+html ::-webkit-scrollbar-thumb {
+  @apply bg-default-100;
+}
+html ::-webkit-scrollbar-thumb:hover {
   @apply bg-default-200;
+}
+/* dark */
+html.dark ::-webkit-scrollbar-thumb {
+  @apply bg-default-900;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-default-800;
 }
 
 /* CUSTOM */
